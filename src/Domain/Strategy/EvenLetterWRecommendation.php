@@ -10,6 +10,6 @@ class EvenLetterWRecommendation implements RecommendationStrategy
 {
     public function getRecommendations(array $movies): array
     {
-        return array_filter($movies, fn($title) => str_starts_with($title, 'W') && mb_strlen($title) % 2 === 0);
+        return array_filter($movies, fn($title) => str_starts_with($title, 'W') && mb_strlen(str_replace(' ', '', $title)) % 2 === 0);
     }
 }

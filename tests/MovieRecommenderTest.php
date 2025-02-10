@@ -39,7 +39,7 @@ class MovieRecommenderTest extends TestCase
 
         array_map(function ($title) {
             $this->assertTrue(str_starts_with($title, 'W'));
-            $this->assertTrue(mb_strlen($title) % 2 === 0);
+            $this->assertTrue(mb_strlen(str_replace(' ', '', $title)) % 2 === 0);
         }, $recommendations);
     }
 
@@ -47,6 +47,6 @@ class MovieRecommenderTest extends TestCase
     {
         $recommendations = $this->controller->handle(new MultiWordRecommendation());
 
-        array_map(fn($title) => $this->assertTrue(str_word_count($title) > 1), $recommendations);
+        array_map(fn($title) => $this->assertTrue(str_word_count($title) > 2), $recommendations);
     }
 }
