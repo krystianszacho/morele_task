@@ -10,12 +10,15 @@ class MovieFileRepository implements MovieRepository
 {
     public function getAllMovies(): array
     {
-        $movies = require __DIR__ . '/../../data/movies.php';
+        try {
+            $movies = require __DIR__ . '/../../data/movies.php';
+            if (!is_array($movies)) {
+                throw new \RuntimeException('movies.php nie zwrócił poprawnej tablicy filmów.');
+            }
 
-        if (!is_array($movies)) {
-            throw new \RuntimeException('movies.php nie zwrócił poprawnej tablicy filmów.');
+            return $movies;
+        } catch (\Exception $e) {
+            throw new \RuntimeException('Błąd podczas ładowania filmów: ' . $e->getMessage());
         }
-
-        return $movies;
     }
 }
