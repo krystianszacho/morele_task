@@ -10,6 +10,6 @@ class MultiWordRecommendation implements RecommendationStrategy
 {
     public function getRecommendations(array $movies): array
     {
-        return array_filter($movies, fn($title) => str_word_count($title) > 1);
+        return array_filter($movies, fn($movie) => str_word_count($movie) > 2);
     }
 }
