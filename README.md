@@ -9,16 +9,18 @@ Projekt to aplikacja backendowa w PHP 8.1 do rekomendacji filmów, wykorzystują
 ```
 ├── src/
 │   ├── Application/
-│   │   ├── MovieRecommender.php
+│   │   ├── MovieRecommenderService.php
+│   ├── Controller/
+│   │   ├── RecommenderController.php
 │   ├── Domain/
+│   │   ├── Strategy/
+│   │   │   ├── EvenLetterWRecommendation.php
+│   │   │   ├── MultiWordRecommendation.php
+│   │   │   ├── RandomRecommendation.php
 │   │   ├── MovieRepository.php
 │   │   ├── RecommendationStrategy.php
 │   ├── Infrastructure/
 │   │   ├── MovieFileRepository.php
-│   ├── Recommendation/
-│       ├── RandomRecommendation.php
-│       ├── EvenLetterWRecommendation.php
-│       ├── MultiWordRecommendation.php
 ├── tests/
 │   ├── MovieRecommenderTest.php
 ├── data/
