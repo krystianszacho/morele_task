@@ -12,7 +12,7 @@ use App\Domain\Strategy\RandomRecommendation;
 use App\Domain\Strategy\EvenLetterWRecommendation;
 use App\Domain\Strategy\MultiWordRecommendation;
 
-class MovieRecommenderTest extends TestCase
+final class MovieRecommenderTest extends TestCase
 {
     private array $movies;
     private RecommendationController $controller;

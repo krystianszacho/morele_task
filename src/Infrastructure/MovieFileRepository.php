@@ -6,7 +6,7 @@ namespace App\Infrastructure;
 
 use App\Domain\MovieRepository;
 
-class MovieFileRepository implements MovieRepository
+final class MovieFileRepository implements MovieRepository
 {
     public function getAllMovies(): array
     {

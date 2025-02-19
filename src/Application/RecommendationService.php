@@ -7,7 +7,7 @@ namespace App\Application;
 use App\Domain\MovieRepository;
 use App\Domain\RecommendationStrategy;
 
-class RecommendationService
+final class RecommendationService
 {
     public function __construct(private MovieRepository $repository) {}
 

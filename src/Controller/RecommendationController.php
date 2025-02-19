@@ -7,7 +7,7 @@ namespace App\Controller;
 use App\Application\RecommendationService;
 use App\Domain\RecommendationStrategy;
 
-class RecommendationController
+final class RecommendationController
 {
     public function __construct(private RecommendationService $service) {}
 
